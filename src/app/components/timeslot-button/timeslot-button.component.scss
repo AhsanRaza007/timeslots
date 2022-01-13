@@ -1,0 +1,14 @@
+button {
+    border-radius: 8px;
+    height: 40px;
+    border: none;
+    box-shadow: var(--primary-shadow);
+    padding: 8px 16px;
+    font-weight: var(--weight-light);
+    cursor: pointer;
+    transition: all 100ms linear;
+    &:hover {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+}

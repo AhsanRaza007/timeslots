@@ -1,0 +1,27 @@
+<div id="time-slot-app">
+    <div class="heading">{{ timeSlot.isSelected ? 'Edit your Details' : 'Make your Appintment'}} for timeslot {{timeSlot.timeString}}</div>
+    <div class="edit-box">
+        <form [formGroup]="editForm" (ngSubmit)="submit()">
+            <div class="form-body">
+                <div class="form-group">
+                    <span *ngIf="editForm.get('firstName').touched && editForm.get('firstName').hasError('required')" class="error">First Name is Required</span>
+                    <input type="text" class="form-control" formControlName="firstName" name="firstName" placeholder="First Name">
+                </div>
+                <div class="form-group">
+                    <span *ngIf="editForm.get('lastName').touched && editForm.get('lastName').hasError('required')" class="error">Last Name is Required</span>
+                    <input type="text" class="form-control" formControlName="lastName" name="lastName" placeholder="Last Name">
+                </div>
+                <div class="form-group">
+                    <span *ngIf="editForm.get('phone').touched && editForm.get('phone').hasError('required')" class="error">Phone Number is Required</span>
+                    <span *ngIf="editForm.get('phone').touched && !editForm.get('phone').hasError('required') && editForm.get('phone').hasError('pattern')" class="error">Phone Number Must be a Numeric</span>
+                    <span *ngIf="editForm.get('phone').touched && !editForm.get('phone').hasError('required') && !editForm.get('phone').hasError('pattern') && editForm.get('phone').hasError('minlength')" class="error">Phone Number Must be greater than 8</span>
+                    <input type="text" class="form-control" formControlName="phone" name="phone" placeholder="Phone Number">
+                </div>
+                <div class="btn-group">
+                    <input type="submit" class="primary-btn" value="Save">
+                    <input type="button" (click)="redirect()" class="secondary-btn" value="Cancel">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

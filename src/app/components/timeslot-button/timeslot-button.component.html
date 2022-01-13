@@ -1,0 +1,3 @@
+<button (click)="redirect()" [ngStyle]="{'background-color': timeSlot.isSelected ? 'var(--primary-red)' : 'var(--primary-green)', 'color': timeSlot.isSelected ? 'var(--secondary-white)': 'var(--primary-dark)'}">
+    {{timeSlot.timeString}}
+</button>

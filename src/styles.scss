@@ -1,1 +1,112 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+    --weight-light: 200;
+    --weight-medium: 400;
+    --weight-bold: 500;
+    --primary-green: #96CEB4;
+    --primary-yellow: #FFEEAD;
+    --primary-red: #D9534F;
+    --primary-dark: #3e3e3e;
+    --primary-white: #ffffff;
+    --secondary-dark: #433648;
+    --secondary-white: #fff2f2;
+    --primary-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#time-slot-app {
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .heading {
+        font-size: 24px;
+        color: var(--primary-dark);
+        text-align: center;
+        font-weight: var(--weight-bold);
+        height: 80px;
+        line-height: 80px;
+    }
+}
+
+form {
+    width: 100%;
+    .form-body {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        .form-group {
+            width: 60%;
+            display: flex;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            .error {
+                align-self: flex-start;
+                position: absolute;
+                left: -10px;
+                top: -12px;
+            }
+            .form-control {
+                outline: none;
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 4px;
+                padding: 10px;
+                width: 100%;
+                font-weight: 200;
+                color: var(--primary-dark);
+                &::placeholder {
+                    font-weight: 200;
+                    font-family: 'Montserrat', sans-serif;
+                }
+            }
+        }
+    }
+}
+
+.primary-btn {
+    outline: none;
+    background-color: var(--primary-dark);
+    color: var(--primary-white);
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    min-width: 100px;
+}
+
+.secondary-btn {
+    outline: none;
+    background-color: transparent;
+    color: var(--secondary-dark);
+    padding: 8px 16px;
+    border: 1px solid var(--secondary-dark);
+    cursor: pointer;
+    border-radius: 8px;
+    min-width: 100px;
+}
+
+.btn-group {
+    display: flex;
+    gap: 20px;
+}
+
+.error {
+    color: var(--primary-red);
+    font-size: 10px;
+    text-align: left;
+}
